@@ -13,47 +13,28 @@
     <div id="appWrapper">
       <div class="avatarSection">
         <spline-viewer
+          id="blueMochi"
           url="https://prod.spline.design/SWWqultOujbOuBRx/scene.splinecode"
         ></spline-viewer>
       </div>
 
       <div class="main">
-        <div class="leftSection">
-          <div class="mainTextSection"><pre id="result"></pre></div>
-        </div>
-        <div class="midSection">
-          <span></span>
-        </div>
-        <div class="rightSection">
-          <div class="nameSection">
-            <h1 id="letterM">M</h1>
-            <h1 id="letterO">O</h1>
-            <h1 id="letterC">C</h1>
-            <h1 id="letterH">H</h1>
-            <h1 id="letterI">I</h1>
-          </div>
-          <div class="hiddenTitle">
-            <h3 id="letterMText">ignon</h3>
-            <h3 id="letterOText">util de</h3>
-            <h3 id="letterCText">onversation</h3>
-            <h3 id="letterHText">ilarant &</h3>
-            <h3 id="letterIText">nstructif</h3>
-          </div>
-          <div class="meteoSection">
-            <h2 id="weatherTemp">ERR</h2>
-            <div id="weatherState"></div>
-          </div>
-        </div>
+        <div class="leftSection"></div>
+        <div class="midSection"></div>
+        <div class="rightSection"></div>
       </div>
-      <section class="titleSection">
-        <h2>Assistant IA</h2>
-        <h3>- version 1.04 -</h3>
-      </section>
-      <!-- Entrée utilisateur -->
-      <input
-        id="prompt"
-        placeholder=" Des questions ? Je suis la juste pour ca !  Ecrit moi ici ! "
-      />
+      <div class="chatChrono">
+        <pre id="result" class="resultChrono">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Consecte 
+Consecte</pre
+        >
+        <!-- Entrée utilisateur -->
+        <input
+          id="prompt"
+          class="promptChrono"
+          placeholder=" Des questions ? Je suis la juste pour ca !  Ecrit moi ici ! "
+        />
+      </div>
 
       <!-- Boutons -->
       <button id="btnAsk" onclick="ask()">

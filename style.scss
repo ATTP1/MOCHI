@@ -31,6 +31,7 @@ $font-size: 22px;
 
 html,
 body {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -224,13 +225,16 @@ h3 {
     display: block;
     object-fit: cover;
   }
+  #blueMochi {
+    transform: translate(-100px, 0px);
+  }
 }
 
 #appWrapper {
   width: 800px;
   height: 600px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 
   background-color: transparent;
 }
@@ -248,4 +252,15 @@ h3 {
 #btnAsk img {
   width: 25px;
   position: absolute;
+}
+.resultChrono {
+  height: fit-content;
+  margin-bottom: 0;
+
+  margin-left: 250px;
+}
+.chatChrono {
+  margin-top: 330px;
+}
+.promptChrono {
 }
