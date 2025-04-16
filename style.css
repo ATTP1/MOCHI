@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "titleFont";
+  src: url("font/DiloWorld.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "underTitleFont";
+  src: url("font/Idealy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1e1e1e;
+  color: #959595;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30px;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  font-size: 22px;
+  border: none;
+  background: #333;
+  color: #959595;
+}
+
+input {
+  border-radius: 100px;
+  z-index: 2;
+  width: 780px;
+  padding: 17px;
+  background-color: #1e1e1e;
+  border: #ffffff solid 2px;
+  margin-top: 0px;
+}
+
+input:focus {
+  outline: none;
+  border: #ffffff solid 2px;
+  box-shadow: none;
+}
+
+input::placeholder {
+  font-family: "underTitleFont", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+button {
+  background-color: #1e1e1e;
+}
+
+pre {
+  padding: 20px;
+  white-space: pre-wrap;
+  height: 150px;
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "underTitleFont", sans-serif;
+  line-height: 30px;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: "titleFont", sans-serif;
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: "underTitleFont", sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+#weatherTemp {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+#weatherState {
+  margin-top: 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+#weatherState img {
+  width: 85px;
+}
+
+h3 {
+  margin: 0;
+  font-family: "underTitleFont", sans-serif;
+}
+
+#avatarIcon {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#mainTitle {
+  margin-left: 25px;
+}
+
+.hiddenTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: transparent;
+}
+
+.hiddenTitle h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.leftSection {
+  width: 35%;
+  display: flex;
+}
+
+.mainTextSection {
+  width: 100%;
+}
+
+.rightSection {
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nameSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nameSection,
+.hiddenTitle {
+  margin-top: 90px;
+}
+
+.meteoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.avatarSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  z-index: -1;
+  margin-top: -80px;
+}
+.avatarSection spline-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#appWrapper {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+#btnAsk {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 448px;
+  left: 89%;
+  z-index: 3;
+  background: transparent;
+}
+
+#btnAsk img {
+  width: 25px;
+  position: absolute;
+}
+
+/*# sourceMappingURL=style.css.map */

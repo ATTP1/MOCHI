@@ -1,0 +1,247 @@
+// 🎨 Couleurs
+$color-bg: #1e1e1e;
+$color-fg: #ffffff;
+$color-fg2: #959595;
+$color-input-bg: #333;
+$color-input-hover: #461736;
+
+// 🔠 Polices
+$title-font: "titleFont", sans-serif;
+$subtitle-font: "underTitleFont", sans-serif;
+$body-font: "Segoe UI", sans-serif;
+
+// 📦 Polices personnalisées
+@font-face {
+  font-family: "titleFont";
+  src: url("font/DiloWorld.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "underTitleFont";
+  src: url("font/Idealy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+//font size
+$font-size: 22px;
+
+// 🌍 Global
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; // garde la transparence
+}
+body {
+  font-family: $body-font;
+  background: $color-bg;
+  color: $color-fg2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30px;
+}
+// 🔤 Champs et boutons
+
+input,
+button {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  font-size: $font-size;
+
+  border: none;
+  background: $color-input-bg;
+  color: $color-fg2;
+}
+
+input {
+  border-radius: 100px;
+  z-index: 2;
+  width: 780px;
+  padding: 17px;
+  background-color: $color-bg;
+  border: $color-fg solid 2px;
+  margin-top: 0px;
+}
+input:focus {
+  outline: none;
+  border: $color-fg solid 2px;
+  box-shadow: none;
+}
+
+input::placeholder {
+  font-family: "underTitleFont", sans-serif;
+  font-size: 20px;
+  color: $color-fg; // optional color
+}
+
+button {
+  background-color: $color-bg;
+}
+
+// 📄 Affichage de réponse
+pre {
+  padding: 20px;
+  white-space: pre-wrap;
+  height: 150px;
+  color: $color-fg;
+
+  font-size: $font-size;
+  font-family: $subtitle-font;
+  line-height: 30px;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+// 🧁 Titres
+h1 {
+  font-size: 45px;
+  font-family: $title-font;
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: $subtitle-font;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+#weatherTemp {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+#weatherState {
+  margin-top: 0;
+  font-size: 20px;
+  display: flex;
+
+  align-items: center;
+  align-content: center;
+}
+#weatherState img {
+  width: 85px;
+}
+h3 {
+  margin: 0;
+  font-family: $subtitle-font;
+}
+
+// 🤖 Avatar
+#avatarIcon {
+  width: 250px;
+  border-radius: 20px;
+}
+
+// 🧱 Section titre
+.titleSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#mainTitle {
+  margin-left: 25px;
+}
+
+.hiddenTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: transparent;
+}
+
+.hiddenTitle h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.leftSection {
+  width: 35%;
+  display: flex;
+}
+
+.mainTextSection {
+  width: 100%;
+}
+
+.rightSection {
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nameSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nameSection,
+.hiddenTitle {
+  margin-top: 90px;
+}
+
+.meteoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.avatarSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  z-index: -1;
+  margin-top: -80px;
+
+  spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+#appWrapper {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+
+  background-color: transparent;
+}
+
+#btnAsk {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 448px;
+  left: 89%;
+  z-index: 3;
+  background: transparent;
+}
+
+#btnAsk img {
+  width: 25px;
+  position: absolute;
+}
