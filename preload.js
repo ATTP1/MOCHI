@@ -1,9 +1,6 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-contextBridge.exposeInMainWorld("api", {
+contextBridge.exposeInMainWorld("electronAPI", {
   sendPrompt: (prompt) => ipcRenderer.invoke("send-prompt", prompt),
-});
-
-contextBridge.exposeInMainWorld("weatherAPI", {
-  getCurrent: (lat, lon) => ipcRenderer.invoke("get-weather", { lat, lon }),
+  getWeather: () => ipcRenderer.invoke("get-weather"),
 });

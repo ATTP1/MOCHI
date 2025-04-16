@@ -11,7 +11,7 @@ function saveMemory(newEntry) {
   memory.push(newEntry);
 
   // Garde les 5 derniers échanges max
-  const trimmed = memory.slice(-10);
+  const trimmed = memory.slice(-10); //MEMOIRE JUSQUA 10 ECHANGES (5 REPONSES)
   fs.writeFileSync(memoryPath, JSON.stringify(trimmed, null, 2));
 }
 
@@ -93,12 +93,12 @@ const fetch = require("node-fetch");
 
 ipcMain.handle("get-weather", async () => {
   const response = await fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longitude=-73.5617&current_weather=true"
+    "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longitude=-73.5617&daily=weathercode&current_weather=true&timezone=auto"
   );
   const data = await response.json();
 
   return {
-    temperature: data.current_weather.temperature,
-    weathercode: data.current_weather.weathercode,
+    temperature: data.current_weather.temperature, // température actuelle
+    weathercode: data.daily.weathercode[0], // prévision météo du jour
   };
 });

@@ -8,7 +8,8 @@ function linkify(text) {
 
 // Envoie une question à l'IA et affiche la réponse formatée
 async function sendPromptToAI(prompt) {
-  const result = await window.api.sendPrompt(prompt);
+  const result = await window.electronAPI.sendPrompt(prompt);
+
   document.getElementById("result").innerHTML = linkify(result);
 }
 
@@ -69,16 +70,15 @@ function interpretWeatherCode(code) {
 }
 
 async function showWeather() {
-  const lat = 45.5088;
-  const lon = -73.5617;
+  const weather = await window.electronAPI.getWeather(); // récupération prévision + temp
 
-  const weather = await window.weatherAPI.getCurrent(lat, lon);
   if (weather && !weather.error) {
-    const emoji = interpretWeatherCode(weather.weathercode);
+    // ✅ Température actuelle (on ne change rien ici)
     document.querySelector(
       ".meteoSection #weatherTemp"
     ).innerHTML = `${weather.temperature}°C`;
 
+    // ✅ Icône basée sur la prévision du jour
     const iconName = interpretWeatherCode(weather.weathercode);
     document.querySelector(
       ".meteoSection #weatherState"
