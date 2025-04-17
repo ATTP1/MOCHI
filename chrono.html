@@ -10,40 +10,95 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="appWrapper">
-      <div class="avatarSection">
-        <spline-viewer
-          id="blueMochi"
-          url="https://prod.spline.design/SWWqultOujbOuBRx/scene.splinecode"
-        ></spline-viewer>
+    <main>
+      <div id="appWrapper">
+        <div class="avatarSection">
+          <spline-viewer
+            id="blueMochi"
+            url="https://prod.spline.design/SWWqultOujbOuBRx/scene.splinecode"
+          ></spline-viewer>
+        </div>
+
+        <!-- CHRONO UI -->
+        <div id="chronoView">
+          <div class="chronoContainer">
+            <div class="timer-wrapper">
+              <svg class="timer-ring" width="350" height="350">
+                <!-- Cercle de fond -->
+                <circle
+                  class="progress-background"
+                  stroke="#333"
+                  stroke-width="20"
+                  fill="transparent"
+                  r="165"
+                  cx="175"
+                  cy="175"
+                />
+
+                <!-- Cercle animé -->
+                <circle
+                  class="progress-ring"
+                  stroke="#66aaff"
+                  stroke-width="20"
+                  fill="transparent"
+                  r="165"
+                  cx="175"
+                  cy="175"
+                />
+              </svg>
+              <div id="timeDisplay" class="time">00:00:00</div>
+            </div>
+
+            <div class="controls">
+              <select id="companySelect">
+                <option value="INES">INES</option>
+                <option value="Autres">Autres</option>
+              </select>
+              <input
+                type="text"
+                id="taskDescription"
+                placeholder="Nom de la tâche..."
+              />
+
+              <br />
+
+              <button id="saveBtn">Sauvegarder</button>
+              <button id="goToLogBtn">📒 Journal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- JOURNAL -->
+        <div id="logView" style="display: none">
+          <h2>🗃️ Journal des Tâches</h2>
+          <div id="taskListContainer"></div>
+          <button onclick="exportToCSV()">📤 Exporter CSV</button>
+          <button onclick="clearLogView()">🔙 Retour</button>
+        </div>
+
+        <div class="chatChrono">
+          <pre id="result" class="resultChrono">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consecte 
+                Consecte
+                </pre
+          >
+          <!-- Entrée utilisateur -->
+          <input
+            id="prompt"
+            class="promptChrono"
+            placeholder=" Des questions ? Je suis la juste pour ca !  Ecrit moi ici ! "
+          />
+        </div>
+
+        <!-- Boutons -->
+        <button id="btnAsk" onclick="ask()">
+          <img src="images/Asset 3.png" alt="" />
+        </button>
       </div>
 
-      <div class="main">
-        <div class="leftSection"></div>
-        <div class="midSection"></div>
-        <div class="rightSection"></div>
-      </div>
-      <div class="chatChrono">
-        <pre id="result" class="resultChrono">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Consecte 
-Consecte</pre
-        >
-        <!-- Entrée utilisateur -->
-        <input
-          id="prompt"
-          class="promptChrono"
-          placeholder=" Des questions ? Je suis la juste pour ca !  Ecrit moi ici ! "
-        />
-      </div>
-
-      <!-- Boutons -->
-      <button id="btnAsk" onclick="ask()">
-        <img src="images/Asset 3.png" alt="" />
-      </button>
-    </div>
-
-    <!-- Résultat affiché -->
-
+      <!-- Résultat affiché -->
+    </main>
     <script src="renderer.js"></script>
+    <script src="chronoLogic.js"></script>
   </body>
 </html>

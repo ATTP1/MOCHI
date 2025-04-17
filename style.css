@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "titleFont";
   src: url("font/DiloWorld.ttf") format("truetype");
@@ -219,7 +220,7 @@ h3 {
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 448px;
+  top: 437px;
   left: 89%;
   z-index: 3;
   background: transparent;
@@ -230,6 +231,10 @@ h3 {
   position: absolute;
 }
 
+.promptChrono {
+  margin-top: -370px;
+}
+
 .resultChrono {
   height: fit-content;
   margin-bottom: 0;
@@ -238,6 +243,84 @@ h3 {
 
 .chatChrono {
   margin-top: 330px;
+}
+
+#timeDisplay {
+  font-size: 55px;
+  font-family: "titleFont", sans-serif;
+}
+
+.timer-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.timer-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg); /* démarre à 12h */
+}
+
+.progress-ring {
+  transition: stroke-dashoffset 1s linear;
+}
+
+#timeDisplay {
+  position: absolute;
+  top: 80%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  font-family: "underTitleFont", sans-serif;
+  font-weight: bold;
+  color: #52a7ba;
+  cursor: pointer;
+}
+
+.chronoContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.timer-wrapper {
+  width: 50%;
+  margin-left: 50px;
+}
+
+.controls {
+  width: 50%;
+}
+
+#taskDescription {
+  width: 100%;
+}
+
+#companySelect {
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "titleFont", sans-serif;
+  font-size: 55px;
+  margin-bottom: 10px;
+  border: 0;
+}
+
+#saveBtn {
+  position: absolute;
+  border-radius: 100px;
+  z-index: 2;
+  width: 300px;
+  padding: 17px;
+  background-color: #1e1e1e;
+  border: #ffffff solid 2px;
+  margin-left: 700px;
+  top: 5%;
+  font-size: 22px;
+  font-family: "underTitleFont", sans-serif;
+  text-align: left;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */
