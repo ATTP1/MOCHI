@@ -38,11 +38,26 @@
                 <!-- Cercle animé -->
                 <circle
                   class="progress-ring"
-                  stroke="#66aaff"
+                  stroke="#6385b7"
                   stroke-width="20"
                   fill="transparent"
                   r="165"
                   cx="175"
+                  cy="175"
+                />
+
+                <circle
+                  id="progress-indicator"
+                  r="10"
+                  fill="#6385b7"
+                  cx="340"
+                  cy="175"
+                />
+                <circle
+                  id="start-indicator"
+                  r="10"
+                  fill="#6385b7"
+                  cx="340"
                   cy="175"
                 />
               </svg>
@@ -63,24 +78,32 @@
               <br />
 
               <button id="saveBtn">Sauvegarder</button>
-              <button id="goToLogBtn">📒 Journal</button>
+              <button id="goToLogBtn">
+                <img src="images/library.png" alt="" />
+              </button>
             </div>
           </div>
         </div>
 
         <!-- JOURNAL -->
+        <!-- JOURNAL VIEW -->
         <div id="logView" style="display: none">
-          <h2>🗃️ Journal des Tâches</h2>
-          <div id="taskListContainer"></div>
-          <button onclick="exportToCSV()">📤 Exporter CSV</button>
-          <button onclick="clearLogView()">🔙 Retour</button>
+          <h2 class="log-title">Tâches passées</h2>
+
+          <div id="taskListContainer" class="log-container">
+            <!-- JS viendra injecter les tâches ici -->
+          </div>
+
+          <div class="log-buttons">
+            <button id="backToChronoBtn">↩️</button>
+            <button id="deleteSelectedBtn">🗑️</button>
+            <button onclick="exportToCSV()">📤</button>
+          </div>
         </div>
 
         <div class="chatChrono">
           <pre id="result" class="resultChrono">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consecte 
-                Consecte
-                </pre
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illoadipisicing elit. Illo,adipisicing elit. Illo ? </pre
           >
           <!-- Entrée utilisateur -->
           <input

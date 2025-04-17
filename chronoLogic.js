@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  alert("✅ JS chargé");
+  //alert("✅ JS chargé");
 
   let timer = null;
   let time = 0;
@@ -27,16 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function startTimer() {
     if (isRunning) return;
     isRunning = true;
+    timeDisplay.classList.remove("pulse");
     timer = setInterval(() => {
       time++;
       updateDisplay();
-      setRingProgress(time); // met à jour l'animation du cercle
+      setRingProgress(time);
+      updateIndicator(time);
     }, 1000);
   }
 
   function pauseTimer() {
     isRunning = false;
     clearInterval(timer);
+    timeDisplay.classList.add("pulse");
   }
 
   function resetTimer() {
@@ -62,8 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("mochiTasks", JSON.stringify(tasks));
 
     alert("Tâche sauvegardée !");
-    resetTimer();
-    descInput.value = "";
+
+    // ✅ STOP et RESET propre, même si en pause
+    pauseTimer(); // stoppe le timer s'il roule
+    timeDisplay.classList.remove("pulse"); // enlève le clignotement si actif
+    resetTimer(); // remet le timer à 0
+    timeDisplay.style.color = "#959595"; // couleur repos
   }
 
   timeDisplay.addEventListener("click", () => {
@@ -73,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       timeDisplay.style.color = "#ffffff"; // facultatif : changement visuel
     } else {
       startTimer();
-      timeDisplay.style.color = "#66ff66"; // facultatif : changement visuel
+      timeDisplay.style.color = "#6385b7"; // facultatif : changement visuel
     }
   });
 
@@ -91,21 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     tasks.forEach((task, index) => {
-      const div = document.createElement("div");
-      div.innerHTML = `
-      <p>${task.date} | ${task.company} | ${task.description} - ${task.duration}
-        <button onclick="deleteTask(${index})">🗑️</button>
-      </p>`;
-      container.appendChild(div);
+      const taskDiv = document.createElement("div");
+      taskDiv.className = "log-task";
+      taskDiv.innerHTML = `
+        <input type="checkbox" class="log-checkbox" data-index="${index}">
+        <div>
+          <strong>${task.date}</strong><br/>
+          Compagnie : ${task.company}<br/>
+          Description : ${task.description}<br/>
+          Temps : ${task.duration}
+        </div>
+      `;
+      container.appendChild(taskDiv);
     });
 
-    document.getElementById("chronoView").style.display = "none";
-    document.getElementById("logView").style.display = "block";
-  }
-
-  function clearLogView() {
-    document.getElementById("logView").style.display = "none";
-    document.getElementById("chronoView").style.display = "block";
+    // 👇 Masquer tout dans appWrapper sauf logView
+    Array.from(document.getElementById("appWrapper").children).forEach(
+      (child) => {
+        if (child.id !== "logView") {
+          child.style.display = "none";
+        } else {
+          child.style.display = "block";
+        }
+      }
+    );
   }
 
   document.getElementById("goToLogBtn").addEventListener("click", showLogView);
@@ -148,4 +164,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const offset = circumference - percent * circumference;
     ring.style.strokeDashoffset = offset;
   }
+
+  // 🧼 Efface sélectionnées
+  document.getElementById("deleteSelectedBtn").addEventListener("click", () => {
+    const checkboxes = document.querySelectorAll(".log-checkbox:checked");
+    let tasks = JSON.parse(localStorage.getItem("mochiTasks") || "[]");
+
+    const indexesToDelete = Array.from(checkboxes).map((cb) =>
+      parseInt(cb.dataset.index)
+    );
+    tasks = tasks.filter((_, i) => !indexesToDelete.includes(i));
+
+    localStorage.setItem("mochiTasks", JSON.stringify(tasks));
+    showLogView(); // refresh
+  });
+
+  // 🔙 Retour chrono
+  document.getElementById("backToChronoBtn").addEventListener("click", () => {
+    // Affiche tous les enfants
+    Array.from(document.getElementById("appWrapper").children).forEach(
+      (child) => {
+        child.style.display = "";
+      }
+    );
+
+    // Cache uniquement le logView
+    document.getElementById("logView").style.display = "none";
+  });
 });
+const indicator = document.getElementById("progress-indicator");
+const centerX = 175;
+const centerY = 175;
+const radiusIndicator = 165;
+
+function updateIndicator(seconds) {
+  const angle = (seconds / 3600) * 360; // rotation sur 1h
+  const rad = angle * (Math.PI / 180); // décalage pour commencer à 12h
+  const x = centerX + radiusIndicator * Math.cos(rad);
+  const y = centerY + radiusIndicator * Math.sin(rad);
+
+  indicator.setAttribute("cx", x);
+  indicator.setAttribute("cy", y);
+}

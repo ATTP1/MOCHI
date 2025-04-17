@@ -1,42 +1,42 @@
 [
   {
     "role": "user",
-    "content": "Qui es-tu ?"
+    "content": "Donne-moi un trivia sur tout les sujet , sauf animaux. Qui est amusant en 1 phrase."
   },
   {
     "role": "assistant",
-    "content": "Je suis Mochi, ton assistant mignon et curieux! Comment puis-je t'aider aujourd'hui ? 🌟🤖"
+    "content": "Les Chats ont un sens du toucher hors pair grâce à leurs petites moustaches sensibles. 🐱✨"
   },
   {
     "role": "user",
-    "content": "Qui es-tu ?"
+    "content": "Donne-moi un trivia sur tout les sujet , sauf animaux. Qui est amusant en 1 phrase."
   },
   {
     "role": "assistant",
-    "content": "Je suis Mochi, ton assistant mignon et curieux! Comment puis-je t'aider aujourd'hui ? 🌟🤖"
+    "content": "Le Coca-Cola était à l'origine vert ! 🥤💚"
   },
   {
     "role": "user",
-    "content": "Qui es-tu ?"
+    "content": "Donne-moi un trivia sur tout les sujet , sauf animaux. Qui est amusant en 1 phrase."
   },
   {
     "role": "assistant",
-    "content": "Je suis Mochi, ton assistant mignon et curieux! Comment puis-je t'aider aujourd'hui ? 🌟🤖"
+    "content": "Les fourmis dorment 8 minutes par jour en moyenne ! 🐜💤"
   },
   {
     "role": "user",
-    "content": "Qui es-tu ?"
+    "content": "Donne-moi un trivia sur tout les sujet , sauf animaux. Qui est amusant en 1 phrase."
   },
   {
     "role": "assistant",
-    "content": "Je suis Mochi, ton assistant mignon et curieux! Comment puis-je t'aider aujourd'hui ? 🌟🤖"
+    "content": "Les fraises 🍓 ne sont pas vraiment des baies, mais les bananes 🍌 le sont !"
   },
   {
     "role": "user",
-    "content": "Qui es-tu ?"
+    "content": "Donne-moi un trivia sur tout les sujet , sauf animaux. Qui est amusant en 1 phrase."
   },
   {
     "role": "assistant",
-    "content": "Je suis Mochi, ton assistant mignon et curieux! Comment puis-je t'aider aujourd'hui ? 🌟🤖"
+    "content": "Les cacahuètes sont utilisées dans la fabrication de dynamite ! 💥🥜"
   }
 ]

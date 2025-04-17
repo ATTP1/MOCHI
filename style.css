@@ -45,6 +45,10 @@ button {
   color: #959595;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 input {
   border-radius: 100px;
   z-index: 2;
@@ -205,7 +209,7 @@ h3 {
   object-fit: cover;
 }
 .avatarSection #blueMochi {
-  transform: translate(-100px, 0px);
+  transform: translate(-100px, 10px);
 }
 
 #appWrapper {
@@ -214,35 +218,6 @@ h3 {
   position: relative;
   overflow: visible;
   background-color: transparent;
-}
-
-#btnAsk {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 437px;
-  left: 89%;
-  z-index: 3;
-  background: transparent;
-}
-
-#btnAsk img {
-  width: 25px;
-  position: absolute;
-}
-
-.promptChrono {
-  margin-top: -370px;
-}
-
-.resultChrono {
-  height: fit-content;
-  margin-bottom: 0;
-  margin-left: 250px;
-}
-
-.chatChrono {
-  margin-top: 330px;
 }
 
 #timeDisplay {
@@ -276,7 +251,7 @@ h3 {
   font-size: 70px;
   font-family: "underTitleFont", sans-serif;
   font-weight: bold;
-  color: #52a7ba;
+  color: #959595;
   cursor: pointer;
 }
 
@@ -304,6 +279,8 @@ h3 {
   font-family: "titleFont", sans-serif;
   font-size: 55px;
   margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 5px;
   border: 0;
 }
 
@@ -321,6 +298,140 @@ h3 {
   font-family: "underTitleFont", sans-serif;
   text-align: left;
   color: #ffffff;
+}
+
+#goToLogBtn {
+  background-color: transparent;
+  position: absolute;
+  left: 790px;
+  top: 130px;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+}
+
+@keyframes pulseBlink {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+#timeDisplay.pulse {
+  animation: pulseBlink 1s infinite ease-in-out;
+}
+
+#logView {
+  width: 90%;
+  text-align: center;
+}
+
+.log-title {
+  color: #6b7ba2;
+  font-family: "underTitleFont", sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.log-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background: linear-gradient(145deg, #c9d9f0, #b6c7e4);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.log-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e6f0ff;
+  border-radius: 25px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  color: #2e3f5e;
+}
+
+.log-task input[type=checkbox] {
+  margin-right: 15px;
+  transform: scale(1.2);
+}
+
+.log-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.log-buttons button {
+  font-size: 1.4rem;
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#backToChronoBtn {
+  background: #dce7ff;
+}
+
+#deleteSelectedBtn {
+  background: #ffe3e3;
+}
+
+#btnAsk {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 453px;
+  left: 89%;
+  z-index: 3;
+  background: transparent;
+}
+
+#btnAsk img {
+  width: 25px;
+  position: absolute;
+}
+
+.resultChrono {
+  height: 100px;
+  margin-bottom: 0;
+  margin-left: 250px;
+  padding-bottom: 0;
+}
+
+.chatChrono {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+#appWrapper > * {
+  transition: all 0.2s ease-in-out;
+}
+
+#logView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1e1e1e;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  z-index: 10;
 }
 
 /*# sourceMappingURL=style.css.map */
