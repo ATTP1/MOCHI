@@ -362,41 +362,67 @@ h3 {
   text-align: center;
 }
 
+#logView input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#logView input[type="checkbox"]:checked {
+  background-color: $color-blueMochi;
+}
+
 .log-title {
-  color: #6b7ba2;
+  color: $color-blueMochi;
   font-family: "underTitleFont", sans-serif;
-  font-size: 24px;
+  font-size: 35px;
   margin-bottom: 20px;
 }
 
 .log-container {
-  max-height: 300px;
+  max-height: 450px;
   overflow-y: auto;
   padding: 10px;
-  background: linear-gradient(145deg, #c9d9f0, #b6c7e4);
+  background: transparent;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .log-task {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #e6f0ff;
-  border-radius: 25px;
+  background: $color-bg;
+  border-radius: 250px;
+  border: $color-fg2 5px solid;
   padding: 12px 20px;
   margin-bottom: 10px;
   font-family: "Segoe UI", sans-serif;
   font-size: 0.9rem;
-  color: #2e3f5e;
+  color: $color-fg;
+}
+
+.log-task div {
+  width: 80%;
+  font-family: $subtitle-font;
+  letter-spacing: 2px;
+  font-size: 25px;
 }
 
 .log-task input[type="checkbox"] {
-  margin-right: 15px;
-  transform: scale(1.2);
+  width: 200px;
+  height: 100px;
+}
+.log-task input .log-checkbox {
+  border-radius: 50px;
 }
 
-.log-buttons {
+.log-task input .log-buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
@@ -409,14 +435,23 @@ h3 {
   border: none;
   cursor: pointer;
   transition: 0.2s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.log-buttons button img {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 10px;
+}
+
+.log-buttons {
+  display: flex;
 }
 
 #backToChronoBtn {
-  background: #dce7ff;
+  background: transparent;
 }
 #deleteSelectedBtn {
-  background: #ffe3e3;
+  background: transparent;
 }
 
 #btnAsk {
